@@ -4,117 +4,209 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Emircan Erol</title>
-  <meta name="description" content="Emircan Erol — MSc student in Artificial Intelligence at Koç University, working on interpretability and multimodal learning.">
+  <meta name="description" content="Emircan Erol is an MSc student in Artificial Intelligence at Koç University working on interpretability and multimodal learning.">
   <meta property="og:title" content="Emircan Erol">
-  <meta property="og:description" content="Interpretability and multimodal learning.">
+  <meta property="og:description" content="MSc student in AI at Koç University. Interpretability and multimodal learning.">
   <meta property="og:image" content="https://emircanerol.com/images/profile.jpg">
+  <meta name="color-scheme" content="light dark">
   <link rel="icon" href="images/profile.jpg">
+  <script>
+    // Apply a saved theme before first paint so the page never flashes the wrong colors.
+    try { const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="site.js" defer></script>
 </head>
 <body>
-<main>
+<a class="skip" href="#main">Skip to content</a>
 
-  <nav class="site-nav" aria-label="Site">
-    <a href="./" aria-current="page">Home</a>
-    <a href="cv.html">CV</a>
-  </nav>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="wordmark" href="./">Emircan Erol</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#research">Research</a>
+      <a href="#publications">Papers</a>
+      <a href="#experience">Experience</a>
+      <a href="cv.html">CV</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch to dark theme">
+      <svg class="icon icon-moon" aria-hidden="true"><use href="images/icons.svg#moon"/></svg>
+      <svg class="icon icon-sun" aria-hidden="true"><use href="images/icons.svg#sun"/></svg>
+    </button>
+  </div>
+</header>
 
-  <!-- ============ Header ============ -->
-  <header class="intro">
-    <div class="intro-text">
-      <h1>Emircan Erol</h1>
-      <p class="role">MSc student in AI · <a href="https://www.ku.edu.tr/en/">Koç University</a> · Istanbul</p>
+<main id="main">
 
-      <!-- TODO: rewrite this bio in your own words -->
-      <p>
-        I am an MSc student in Artificial Intelligence at Koç University.
-        Before that, I was an AI researcher at <a href="https://bilgem.tubitak.gov.tr/en/">TÜBİTAK BİLGEM</a>,
-        where I built tooling for analyzing models with sparse autoencoders and activation engineering,
-        and worked on Turkish LLM data and evaluation.
-        I received my BSc in Artificial Intelligence from Istanbul Technical University.
+  <!-- ============ Intro ============ -->
+  <section class="hero" aria-labelledby="name">
+    <div class="hero-text">
+      <h1 id="name">Emircan Erol</h1>
+      <p class="role">MSc student in Artificial Intelligence at <a href="https://www.ku.edu.tr/en/">Koç University</a>, Istanbul</p>
+
+      <!--
+        The bio is annotated with coreference clusters: every <span class="m" data-c="X">
+        with the same X refers to the same thing. Hovering or focusing one lights up its cluster.
+      -->
+      <p class="bio" id="bio">
+        <span class="m" data-c="me" tabindex="0">I'm Emircan</span>, and
+        <span class="m" data-c="me" tabindex="0">I</span> am doing
+        <span class="m" data-c="msc" tabindex="0">an MSc in Artificial Intelligence at Koç University</span>.
+        Before starting <span class="m" data-c="msc" tabindex="0">the program</span>,
+        <span class="m" data-c="me" tabindex="0">I</span> spent a year and a half at
+        <span class="m" data-c="bilgem" tabindex="0">TÜBİTAK BİLGEM</span>.
+        <span class="m" data-c="bilgem" tabindex="0">There</span>,
+        <span class="m" data-c="me" tabindex="0">I</span> built tools for looking inside
+        <span class="m" data-c="lm" tabindex="0">language models</span> with sparse autoencoders
+        and steering <span class="m" data-c="lm" tabindex="0">them</span> through
+        <span class="m" data-c="lm" tabindex="0">their</span> activations.
+        Now <span class="m" data-c="me" tabindex="0">I</span> want to understand what models represent,
+        and how they bring together text, images and other kinds of data.
+      </p>
+      <p class="bio-hint">
+        Hover or tap a highlighted phrase to see which words refer to the same thing.
+        That task, coreference resolution, is what <a href="#publications">our TACL paper</a> is about.
+        <button class="text-button" type="button" id="show-all" aria-pressed="false">Show all</button>
       </p>
 
-      <nav class="links" aria-label="Contact and profiles">
-        <a href="mailto:emerol26@ku.edu.tr">Email</a>
-        <a href="https://scholar.google.com/citations?user=25CpSdkAAAAJ">Scholar</a>
-        <a href="https://orcid.org/0000-0001-8907-0475">ORCID</a>
-        <a href="https://www.linkedin.com/in/emircanerol/">LinkedIn</a>
-        <a href="https://github.com/emircanerol">GitHub</a>
-        <a href="cv.html">CV</a>
-      </nav>
+      <ul class="profiles" aria-label="Contact and profiles">
+        <li class="email-group">
+          <a class="chip" href="mailto:emerol26@ku.edu.tr">
+            <svg class="icon" aria-hidden="true"><use href="images/icons.svg#mail"/></svg>emerol26@ku.edu.tr
+          </a>
+          <button class="chip chip-icon copy" type="button" data-copy="emerol26@ku.edu.tr" aria-label="Copy email address">
+            <svg class="icon" aria-hidden="true"><use href="images/icons.svg#copy"/></svg>
+          </button>
+        </li>
+        <li><a class="chip" href="https://scholar.google.com/citations?user=25CpSdkAAAAJ"><svg class="icon" aria-hidden="true"><use href="images/icons.svg#scholar"/></svg>Scholar</a></li>
+        <li><a class="chip" href="https://orcid.org/0000-0001-8907-0475"><svg class="icon" aria-hidden="true"><use href="images/icons.svg#orcid"/></svg>ORCID</a></li>
+        <li><a class="chip" href="https://www.linkedin.com/in/emircanerol/"><svg class="icon" aria-hidden="true"><use href="images/icons.svg#linkedin"/></svg>LinkedIn</a></li>
+        <li><a class="chip" href="https://github.com/emircanerol"><svg class="icon" aria-hidden="true"><use href="images/icons.svg#github"/></svg>GitHub</a></li>
+        <li><a class="chip chip-strong" href="cv.html"><svg class="icon" aria-hidden="true"><use href="images/icons.svg#doc"/></svg>CV</a></li>
+      </ul>
     </div>
-    <img class="portrait" src="images/profile.jpg" alt="Emircan Erol" width="200" height="200">
-  </header>
 
-  <!-- ============ Research interests ============ -->
-  <section>
-    <h2>Research Interests</h2>
-    <ul class="interests">
-      <li>
-        <strong>Interpretability</strong> —
-        understanding what models represent and how they compute it, using sparse autoencoders and activation engineering.
-      </li>
-      <li>
-        <!-- TODO: name the specific area of multimodality you focus on -->
-        <strong>Multimodal learning</strong> —
-        how models combine vision and language, and multimodal data in medicine.
-      </li>
-    </ul>
+    <img class="portrait" src="images/profile.jpg" alt="Portrait of Emircan Erol" width="400" height="400">
   </section>
 
-  <!-- ============ News ============ -->
-  <section>
-    <h2>News</h2>
-    <!-- Newest first. Copy a <li> to add an item. -->
-    <ul class="news">
-      <li><time>Oct 2026</time> Started my MSc in Artificial Intelligence at Koç University.</li>
-    </ul>
+  <!-- ============ Research ============ -->
+  <section id="research" class="block" aria-labelledby="research-title">
+    <h2 id="research-title">Research</h2>
+    <div class="interests">
+      <article class="interest">
+        <h3>Interpretability</h3>
+        <p>What do models represent internally, and how do they use it? I work with sparse autoencoders and activation steering to find and test those representations.</p>
+      </article>
+      <article class="interest">
+        <!-- TODO: name the specific area of multimodality you focus on -->
+        <h3>Multimodal learning</h3>
+        <p>How models combine vision and language, and how they can learn from several kinds of medical data at once.</p>
+      </article>
+    </div>
   </section>
 
   <!-- ============ Publications ============ -->
-  <section>
-    <h2>Publications</h2>
+  <section id="publications" class="block" aria-labelledby="pubs-title">
+    <h2 id="pubs-title">Publications</h2>
 
-    <!--
-      One <article class="pub"> per paper; add "highlight" for selected work.
-      Optional thumbnail: <img class="pub-thumb" src="images/xxx.png" alt="">
-    -->
-    <article class="pub highlight">
-      <div class="pub-body">
-        <h3>CorefInst: Leveraging LLMs for Multilingual Coreference Resolution</h3>
-        <p class="authors">Tuğba Pamay Arslan, <strong>Emircan Erol</strong>, Gülşen Eryiğit</p>
-        <p class="venue">Transactions of the Association for Computational Linguistics (TACL), vol. 14, 2026</p>
-        <p class="pub-links">
-          <a href="https://direct.mit.edu/tacl/article/doi/10.1162/TACL.a.593/134743">paper</a>
-          <a href="https://arxiv.org/abs/2509.17505">arXiv</a>
-        </p>
-        <p class="tldr">
-          The first multilingual coreference resolution method built on decoder-only LLMs, handling both overt and zero mentions.
-          We compare five instruction sets for casting coreference as an instruction-following task, with a controlled inference
-          procedure, across Llama 3.1, Gemma 2 and Mistral 0.3. Our best model, a fully fine-tuned Llama 3.1, outperforms the
-          previous state of the art (CorPipe 24) by 2 points on average across the languages of CorefUD v1.2.
+    <!-- Copy an <article class="pub"> to add a paper. Newest first. -->
+    <article class="pub">
+      <p class="pub-venue"><span class="venue-tag">TACL</span> Transactions of the ACL, vol. 14, 2026</p>
+      <h3 class="pub-title">
+        <a href="https://direct.mit.edu/tacl/article/doi/10.1162/TACL.a.593/134743">CorefInst: Leveraging LLMs for Multilingual Coreference Resolution</a>
+      </h3>
+      <p class="pub-authors">Tuğba Pamay Arslan, <strong>Emircan Erol</strong>, Gülşen Eryiğit</p>
+      <p class="pub-summary">
+        Instruction-tuned decoder-only LLMs resolve coreference, including zero mentions, across the languages of CorefUD v1.2,
+        and beat the best task-specific model by 2 points on average.
+      </p>
+
+      <div class="pub-actions">
+        <a class="chip" href="https://direct.mit.edu/tacl/article/doi/10.1162/TACL.a.593/134743">Read paper</a>
+        <a class="chip" href="https://arxiv.org/abs/2509.17505">arXiv</a>
+        <button class="chip" type="button" aria-expanded="false" aria-controls="corefinst-abstract" data-toggle>Abstract</button>
+        <button class="chip" type="button" aria-expanded="false" aria-controls="corefinst-bib" data-toggle>Cite</button>
+      </div>
+
+      <div class="pub-panel" id="corefinst-abstract" hidden>
+        <p>
+          Coreference Resolution (CR) is a crucial yet challenging task in natural language understanding, often constrained by
+          task-specific architectures and encoder-based language models that demand extensive training and lack adaptability.
+          This study introduces the first multilingual CR methodology which leverages decoder-only LLMs to handle both overt and
+          zero mentions. The article explores how to model the CR task for LLMs via five different instruction sets using a
+          controlled inference method. The approach is evaluated across three LLMs: Llama 3.1, Gemma 2, and Mistral 0.3.
+          The results indicate that LLMs, when instruction-tuned with a suitable instruction set, can surpass state-of-the-art
+          task-specific architectures. Specifically, our best model, a fully fine-tuned Llama 3.1 for multilingual CR,
+          outperforms the leading multilingual CR model (i.e., Corpipe 24 single stage variant) by 2 percentage points on
+          average across all languages in the CorefUD v1.2 dataset collection.
         </p>
       </div>
+
+      <div class="pub-panel" id="corefinst-bib" hidden>
+        <pre class="bibtex"><code>@article{pamayarslan2026corefinst,
+  title   = {CorefInst: Leveraging {LLM}s for Multilingual Coreference Resolution},
+  author  = {Pamay Arslan, Tu{\u{g}}ba and Erol, Emircan and Eryi{\u{g}}it, G{\"u}l{\c{s}}en},
+  journal = {Transactions of the Association for Computational Linguistics},
+  volume  = {14},
+  year    = {2026},
+  doi     = {10.1162/TACL.a.593}
+}</code></pre>
+        <button class="chip copy" type="button" data-copy-from="corefinst-bib">
+          <svg class="icon" aria-hidden="true"><use href="images/icons.svg#copy"/></svg>Copy BibTeX
+        </button>
+      </div>
     </article>
+
+    <p class="more">Full list on <a href="https://scholar.google.com/citations?user=25CpSdkAAAAJ">Google Scholar</a>.</p>
   </section>
 
-  <!-- ============ Projects ============ -->
-  <section>
-    <h2>Projects</h2>
-    <ul class="projects">
+  <!-- ============ Experience ============ -->
+  <section id="experience" class="block" aria-labelledby="exp-title">
+    <h2 id="exp-title">Experience</h2>
+    <ul class="timeline">
       <li>
-        <a href="https://huggingface.co/bite-the-byte/byt5-small-deASCIIfy-TR">Bite the Byte</a>
-        — Turkish diacritization with a token-free LLM (ByT5); 96% word-level accuracy.
+        <div><strong>AI Researcher</strong>, TÜBİTAK BİLGEM</div>
+        <p>Sparse-autoencoder tooling for model analysis; OCR and vision-language benchmarks for Turkish documents; Turkish HellaSwag.</p>
+        <span class="when">2025 to 2026</span>
+      </li>
+      <li>
+        <div><strong>AI Engineer</strong>, Albert Health</div>
+        <p>Retrieval-augmented generation over company data; heart-failure severity prediction from voice.</p>
+        <span class="when">2024 to 2025</span>
+      </li>
+      <li>
+        <div><strong>Data Warehouse Engineering Intern</strong>, NXGEN Health AG</div>
+        <p>Healthcare data warehouse in MongoDB, 200 GB+ of standardized data.</p>
+        <span class="when">2023</span>
+      </li>
+      <li>
+        <div><strong>Data Science Intern</strong>, Infoset</div>
+        <p>Siamese BERT document recommender for call-center agents.</p>
+        <span class="when">2022</span>
       </li>
     </ul>
+    <p class="more">Education, projects and skills are on the <a href="cv.html">CV page</a>.</p>
   </section>
 
-  <footer>
-    <p>Last updated November 2026. Design inspired by <a href="https://jonbarron.info/">Jon Barron</a>.</p>
-  </footer>
+  <!-- ============ News ============ -->
+  <section id="news" class="block" aria-labelledby="news-title">
+    <h2 id="news-title">News</h2>
+    <!-- Newest first. -->
+    <ul class="news">
+      <li><time datetime="2026-10">Oct 2026</time><span>Started my MSc in Artificial Intelligence at Koç University.</span></li>
+      <li><time datetime="2026">2026</time><span>CorefInst published in Transactions of the ACL.</span></li>
+    </ul>
+  </section>
 </main>
+
+<footer class="footer">
+  <p>Updated November 2026</p>
+  <p><a href="https://github.com/emircanerol/emircanerol.github.io">Page source</a></p>
+</footer>
+
+<div class="toast" role="status" aria-live="polite"></div>
 </body>
 </html>

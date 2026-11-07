@@ -4,128 +4,164 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CV · Emircan Erol</title>
-  <meta name="description" content="Curriculum vitae of Emircan Erol.">
+  <meta name="description" content="Curriculum vitae of Emircan Erol: education, research experience, publications and skills.">
+  <meta name="color-scheme" content="light dark">
   <link rel="icon" href="images/profile.jpg">
+  <script>
+    try { const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="site.js" defer></script>
 </head>
-<body>
-<main>
+<body class="page-cv">
+<a class="skip" href="#main">Skip to content</a>
 
-  <nav class="site-nav" aria-label="Site">
-    <a href="./">Home</a>
-    <a href="cv.html" aria-current="page">CV</a>
-  </nav>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="wordmark" href="./">Emircan Erol</a>
+    <nav class="nav" aria-label="Site">
+      <a href="./#research">Research</a>
+      <a href="./#publications">Papers</a>
+      <a href="./#experience">Experience</a>
+      <a href="cv.html" aria-current="page">CV</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch to dark theme">
+      <svg class="icon icon-moon" aria-hidden="true"><use href="images/icons.svg#moon"/></svg>
+      <svg class="icon icon-sun" aria-hidden="true"><use href="images/icons.svg#sun"/></svg>
+    </button>
+  </div>
+</header>
 
-  <header class="cv-header">
-    <h1>Curriculum Vitae</h1>
-    <p class="role">Emircan Erol · Last updated November 2026</p>
-    <!-- To offer a download, add cv.pdf to the repo (without your phone number) and uncomment:
-    <p class="links"><a href="cv.pdf">Download PDF</a></p>
-    -->
-  </header>
-
-  <!-- Each entry: .cv-head holds the left title and right-aligned date/place. -->
-
-  <section>
-    <h2>Education</h2>
-    <div class="cv-entry">
-      <div class="cv-head"><h3>Koç University</h3><span>Oct 2026 – Jul 2028 (expected)</span></div>
-      <p>MSc in Artificial Intelligence · Istanbul</p>
+<main id="main">
+  <div class="cv-top">
+    <div>
+      <h1>Emircan Erol</h1>
+      <p class="role">
+        <a href="mailto:emerol26@ku.edu.tr">emerol26@ku.edu.tr</a> ·
+        <a href="https://emircanerol.com">emircanerol.com</a> ·
+        <a href="https://www.linkedin.com/in/emircanerol/">LinkedIn</a> ·
+        <a href="https://github.com/emircanerol">GitHub</a>
+      </p>
     </div>
-    <div class="cv-entry">
-      <div class="cv-head"><h3>Istanbul Technical University</h3><!-- TODO: years --><span></span></div>
-      <p>BSc in Artificial Intelligence · Istanbul</p>
-      <p class="cv-note">Coursework: NLP, Deep Learning, Algorithms, Data Mining, Databases</p>
+    <div class="cv-actions">
+      <button class="chip chip-strong" type="button" id="print-cv">
+        <svg class="icon" aria-hidden="true"><use href="images/icons.svg#print"/></svg>Save as PDF
+      </button>
+    </div>
+  </div>
+
+  <section class="cv-section" aria-labelledby="cv-edu">
+    <h2 id="cv-edu">Education</h2>
+    <div>
+      <div class="cv-entry">
+        <div class="cv-head"><h3>Koç University</h3><span class="when">Oct 2026 to Jul 2028 (expected)</span></div>
+        <p class="cv-sub">MSc in Artificial Intelligence, Istanbul</p>
+      </div>
+      <div class="cv-entry">
+        <!-- TODO: add your BSc years in the empty span -->
+        <div class="cv-head"><h3>Istanbul Technical University</h3><span class="when"></span></div>
+        <p class="cv-sub">BSc in Artificial Intelligence, Istanbul</p>
+        <p>Coursework: natural language processing, deep learning, algorithms, data mining, databases.</p>
+      </div>
     </div>
   </section>
 
-  <section>
-    <h2>Experience</h2>
-    <div class="cv-entry">
-      <div class="cv-head"><h3>TÜBİTAK BİLGEM</h3><span>Mar 2025 – Oct 2026</span></div>
-      <p>AI Researcher · Gebze</p>
-      <ul>
-        <li>Built a modular toolkit for model analysis and visualization with sparse autoencoders and other activation-engineering methods.</li>
-        <li>Benchmarked state-of-the-art OCR and vision-language models on Turkish documents, with error analysis across layout, tables and formulas.</li>
-        <li>Processed a large document corpus into clean LLM training text on a multi-GPU HPC pipeline, including post-OCR correction.</li>
-        <li>Built a Turkish HellaSwag pipeline and analyzed its measurability, contamination and GoldenSwag bias.</li>
-      </ul>
-    </div>
-    <div class="cv-entry">
-      <div class="cv-head"><h3>Albert Health</h3><span>Aug 2024 – Mar 2025</span></div>
-      <p>AI Engineer · Istanbul</p>
-      <ul>
-        <li>Built retrieval-augmented generation and vector-database systems for company-wide analytics and information retrieval.</li>
-        <li>Developed an MVP predicting heart-failure severity from voice data, part of an early-diagnosis R&amp;D effort.</li>
-      </ul>
-    </div>
-    <div class="cv-entry">
-      <div class="cv-head"><h3>NXGEN Health AG</h3><span>Jun 2023 – Sep 2023</span></div>
-      <p>Data Warehouse Engineering Intern · Zurich (remote)</p>
-      <ul>
-        <li>Built a MongoDB warehouse from open data sources and modeled semi-structured data for a web application.</li>
-        <li>Aggregated and standardized 200 GB+ of healthcare data for analytics.</li>
-      </ul>
-    </div>
-    <div class="cv-entry">
-      <div class="cv-head"><h3>Infoset <span class="cv-aside">(acquired by BtcTurk)</span></h3><span>Jun 2022 – Sep 2022</span></div>
-      <p>Data Science Intern · Istanbul</p>
-      <ul>
-        <li>Built a document recommender for call-center agents using a Siamese BERT model for semantic similarity.</li>
-      </ul>
-    </div>
-  </section>
-
-  <section>
-    <h2>Publications</h2>
-    <div class="cv-entry">
-      <div class="cv-head"><h3>CorefInst: Leveraging LLMs for Multilingual Coreference Resolution</h3><span>2026</span></div>
-      <p>Tuğba Pamay Arslan, <strong>Emircan Erol</strong>, Gülşen Eryiğit</p>
-      <p class="venue">Transactions of the Association for Computational Linguistics (TACL) ·
-        <a href="https://direct.mit.edu/tacl/article/doi/10.1162/TACL.a.593/134743">paper</a> ·
-        <a href="https://arxiv.org/abs/2509.17505">arXiv</a></p>
+  <section class="cv-section" aria-labelledby="cv-exp">
+    <h2 id="cv-exp">Experience</h2>
+    <div>
+      <div class="cv-entry">
+        <div class="cv-head"><h3>TÜBİTAK BİLGEM</h3><span class="when">Mar 2025 to Oct 2026</span></div>
+        <p class="cv-sub">AI Researcher, Gebze</p>
+        <ul>
+          <li>Built a modular toolkit for model analysis and visualization with sparse autoencoders and other activation-engineering methods.</li>
+          <li>Benchmarked state-of-the-art OCR and vision-language models on Turkish documents, with error analysis across layout, tables and formulas.</li>
+          <li>Processed a large document corpus into clean LLM training text on a multi-GPU HPC pipeline, including post-OCR correction.</li>
+          <li>Built a Turkish HellaSwag pipeline and analyzed its measurability, contamination and GoldenSwag bias.</li>
+        </ul>
+      </div>
+      <div class="cv-entry">
+        <div class="cv-head"><h3>Albert Health</h3><span class="when">Aug 2024 to Mar 2025</span></div>
+        <p class="cv-sub">AI Engineer, Istanbul</p>
+        <ul>
+          <li>Built retrieval-augmented generation and vector-database systems for company-wide analytics and information retrieval.</li>
+          <li>Developed an MVP that predicts heart-failure severity from voice recordings, part of an early-diagnosis R&amp;D effort.</li>
+        </ul>
+      </div>
+      <div class="cv-entry">
+        <div class="cv-head"><h3>NXGEN Health AG</h3><span class="when">Jun 2023 to Sep 2023</span></div>
+        <p class="cv-sub">Data Warehouse Engineering Intern, Zurich (remote)</p>
+        <ul>
+          <li>Built a MongoDB warehouse from open data sources and modeled semi-structured data for a web application.</li>
+          <li>Aggregated and standardized 200 GB+ of healthcare data for analytics.</li>
+        </ul>
+      </div>
+      <div class="cv-entry">
+        <div class="cv-head"><h3>Infoset</h3><span class="when">Jun 2022 to Sep 2022</span></div>
+        <p class="cv-sub">Data Science Intern, Istanbul (company later acquired by BtcTurk)</p>
+        <ul>
+          <li>Built a document recommender for call-center agents using a Siamese BERT model for semantic similarity.</li>
+        </ul>
+      </div>
     </div>
   </section>
 
-  <section>
-    <h2>Projects</h2>
-    <div class="cv-entry">
-      <div class="cv-head"><h3><a href="https://huggingface.co/bite-the-byte/byt5-small-deASCIIfy-TR">Bite the Byte</a></h3><span>Mar 2024 – May 2024</span></div>
-      <p>Turkish diacritization with a token-free LLM: a token classifier for character correction, 96% word-level accuracy.</p>
-    </div>
-    <div class="cv-entry">
-      <div class="cv-head"><h3>Agora</h3><span>Jan 2024 – present</span></div>
-      <p>Event-based social app for discovering real-world activities through shared interests; early-stage MVP in React Native.</p>
-    </div>
-  </section>
-
-  <section>
-    <h2>Leadership</h2>
-    <div class="cv-entry">
-      <div class="cv-head"><h3>ITU Artificial Intelligence Club</h3><span>Jun 2022 – Jun 2023</span></div>
-      <p>Technical Team Lead. Organized the club's first hackathon, Datathon AI 2023, with 70+ participants from 13 universities.</p>
-    </div>
-    <div class="cv-entry">
-      <div class="cv-head"><h3>Model United Nations</h3><span>Jun 2017 – Jun 2020</span></div>
-      <p>Press Team Lead. Ran press operations for conferences of up to 500 participants.</p>
+  <section class="cv-section" aria-labelledby="cv-pub">
+    <h2 id="cv-pub">Publications</h2>
+    <div>
+      <div class="cv-entry">
+        <div class="cv-head"><h3>CorefInst: Leveraging LLMs for Multilingual Coreference Resolution</h3><span class="when">2026</span></div>
+        <p class="cv-sub">Tuğba Pamay Arslan, <strong>Emircan Erol</strong>, Gülşen Eryiğit. Transactions of the ACL, vol. 14.</p>
+        <p><a href="https://direct.mit.edu/tacl/article/doi/10.1162/TACL.a.593/134743">Paper</a> · <a href="https://arxiv.org/abs/2509.17505">arXiv</a></p>
+      </div>
     </div>
   </section>
 
-  <section>
-    <h2>Skills</h2>
+  <section class="cv-section" aria-labelledby="cv-proj">
+    <h2 id="cv-proj">Projects</h2>
+    <div>
+      <div class="cv-entry">
+        <div class="cv-head"><h3><a href="https://huggingface.co/bite-the-byte/byt5-small-deASCIIfy-TR">Bite the Byte</a></h3><span class="when">Mar 2024 to May 2024</span></div>
+        <p>Turkish diacritization with a token-free LLM: a token classifier for character correction, 96% word-level accuracy.</p>
+      </div>
+      <div class="cv-entry">
+        <div class="cv-head"><h3>Agora</h3><span class="when">Jan 2024 to present</span></div>
+        <p>A mobile app for finding real-world activities through shared interests. Early-stage MVP in React Native.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cv-section" aria-labelledby="cv-lead">
+    <h2 id="cv-lead">Leadership</h2>
+    <div>
+      <div class="cv-entry">
+        <div class="cv-head"><h3>ITU Artificial Intelligence Club</h3><span class="when">Jun 2022 to Jun 2023</span></div>
+        <p class="cv-sub">Technical Team Lead</p>
+        <p>Organized the club's first hackathon, Datathon AI 2023, with 70+ participants from 13 universities.</p>
+      </div>
+      <div class="cv-entry">
+        <div class="cv-head"><h3>Model United Nations</h3><span class="when">Jun 2017 to Jun 2020</span></div>
+        <p class="cv-sub">Press Team Lead</p>
+        <p>Ran press operations for conferences of up to 500 participants.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cv-section" aria-labelledby="cv-skills">
+    <h2 id="cv-skills">Skills</h2>
     <dl class="cv-skills">
-      <dt>Programming</dt><dd>Python (PyTorch, scikit-learn, Optuna, Transformers), C++, SQL</dd>
+      <dt>Programming</dt><dd>Python (PyTorch, Transformers, scikit-learn, Optuna), C++, SQL</dd>
       <dt>Tools</dt><dd>Linux, Git, Docker, Tableau</dd>
       <dt>Languages</dt><dd>Turkish (native), English (advanced), German (beginner)</dd>
     </dl>
   </section>
-
-  <footer>
-    <p><a href="./">← Back to home</a></p>
-  </footer>
 </main>
+
+<footer class="footer">
+  <p>Updated November 2026</p>
+  <p><a href="./">Back to home</a></p>
+</footer>
 </body>
 </html>
