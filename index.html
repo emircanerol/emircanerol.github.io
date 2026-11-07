@@ -82,15 +82,21 @@
       One <article class="pub"> per paper; add "highlight" for selected work.
       Optional thumbnail: <img class="pub-thumb" src="images/xxx.png" alt="">
     -->
-    <article class="pub">
+    <article class="pub highlight">
       <div class="pub-body">
         <h3>CorefInst: Leveraging LLMs for Multilingual Coreference Resolution</h3>
         <p class="authors">Tuğba Pamay Arslan, <strong>Emircan Erol</strong>, Gülşen Eryiğit</p>
-        <p class="venue">Transactions of the Association for Computational Linguistics (TACL), 2026</p>
+        <p class="venue">Transactions of the Association for Computational Linguistics (TACL), vol. 14, 2026</p>
         <p class="pub-links">
           <a href="https://direct.mit.edu/tacl/article/doi/10.1162/TACL.a.593/134743">paper</a>
+          <a href="https://arxiv.org/abs/2509.17505">arXiv</a>
         </p>
-        <p class="tldr">Instruction-tuned decoder-only LLMs reach state-of-the-art coreference resolution across 15 languages, +1.8 CoNLL F1 over the previous best.</p>
+        <p class="tldr">
+          The first multilingual coreference resolution method built on decoder-only LLMs, handling both overt and zero mentions.
+          We compare five instruction sets for casting coreference as an instruction-following task, with a controlled inference
+          procedure, across Llama 3.1, Gemma 2 and Mistral 0.3. Our best model, a fully fine-tuned Llama 3.1, outperforms the
+          previous state of the art (CorPipe 24) by 2 points on average across the languages of CorefUD v1.2.
+        </p>
       </div>
     </article>
   </section>
@@ -102,14 +108,6 @@
       <li>
         <a href="https://huggingface.co/bite-the-byte/byt5-small-deASCIIfy-TR">Bite the Byte</a>
         — Turkish diacritization with a token-free LLM (ByT5); 96% word-level accuracy.
-      </li>
-      <li>
-        <a href="https://github.com/emircanerol/automem">AutoMem</a>
-        — graph-vector memory service that gives AI assistants durable, relational memory.
-      </li>
-      <li>
-        <a href="https://github.com/emircanerol/zemberek-rust">zemberek-rust</a>
-        — Rust port of Zemberek, the Turkish NLP toolkit.
       </li>
     </ul>
   </section>
