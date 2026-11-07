@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CV · Emircan Erol</title>
+  <meta name="description" content="Curriculum vitae of Emircan Erol.">
+  <link rel="icon" href="images/profile.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+
+  <nav class="site-nav" aria-label="Site">
+    <a href="./">Home</a>
+    <a href="cv.html" aria-current="page">CV</a>
+  </nav>
+
+  <header class="cv-header">
+    <h1>Curriculum Vitae</h1>
+    <p class="role">Emircan Erol · Last updated November 2026</p>
+    <!-- To offer a download, add cv.pdf to the repo (without your phone number) and uncomment:
+    <p class="links"><a href="cv.pdf">Download PDF</a></p>
+    -->
+  </header>
+
+  <!-- Each entry: .cv-head holds the left title and right-aligned date/place. -->
+
+  <section>
+    <h2>Education</h2>
+    <div class="cv-entry">
+      <div class="cv-head"><h3>Koç University</h3><span>Oct 2026 – Jul 2028 (expected)</span></div>
+      <p>MSc in Artificial Intelligence · Istanbul</p>
+    </div>
+    <div class="cv-entry">
+      <div class="cv-head"><h3>Istanbul Technical University</h3><!-- TODO: years --><span></span></div>
+      <p>BSc in Artificial Intelligence · Istanbul</p>
+      <p class="cv-note">Coursework: NLP, Deep Learning, Algorithms, Data Mining, Databases</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+    <div class="cv-entry">
+      <div class="cv-head"><h3>TÜBİTAK BİLGEM</h3><span>Mar 2025 – Oct 2026</span></div>
+      <p>AI Researcher · Gebze</p>
+      <ul>
+        <li>Built a modular toolkit for model analysis and visualization with sparse autoencoders and other activation-engineering methods.</li>
+        <li>Benchmarked state-of-the-art OCR and vision-language models on Turkish documents, with error analysis across layout, tables and formulas.</li>
+        <li>Processed a large document corpus into clean LLM training text on a multi-GPU HPC pipeline, including post-OCR correction.</li>
+        <li>Built a Turkish HellaSwag pipeline and analyzed its measurability, contamination and GoldenSwag bias.</li>
+      </ul>
+    </div>
+    <div class="cv-entry">
+      <div class="cv-head"><h3>Albert Health</h3><span>Aug 2024 – Mar 2025</span></div>
+      <p>AI Engineer · Istanbul</p>
+      <ul>
+        <li>Built retrieval-augmented generation and vector-database systems for company-wide analytics and information retrieval.</li>
+        <li>Developed an MVP predicting heart-failure severity from voice data, part of an early-diagnosis R&amp;D effort.</li>
+      </ul>
+    </div>
+    <div class="cv-entry">
+      <div class="cv-head"><h3>NXGEN Health AG</h3><span>Jun 2023 – Sep 2023</span></div>
+      <p>Data Warehouse Engineering Intern · Zurich (remote)</p>
+      <ul>
+        <li>Built a MongoDB warehouse from open data sources and modeled semi-structured data for a web application.</li>
+        <li>Aggregated and standardized 200 GB+ of healthcare data for analytics.</li>
+      </ul>
+    </div>
+    <div class="cv-entry">
+      <div class="cv-head"><h3>Infoset <span class="cv-aside">(acquired by BtcTurk)</span></h3><span>Jun 2022 – Sep 2022</span></div>
+      <p>Data Science Intern · Istanbul</p>
+      <ul>
+        <li>Built a document recommender for call-center agents using a Siamese BERT model for semantic similarity.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Publications</h2>
+    <div class="cv-entry">
+      <div class="cv-head"><h3>CorefInst: Leveraging LLMs for Multilingual Coreference Resolution</h3><span>2026</span></div>
+      <p>Tuğba Pamay Arslan, <strong>Emircan Erol</strong>, Gülşen Eryiğit</p>
+      <p class="venue">Transactions of the Association for Computational Linguistics (TACL) ·
+        <a href="https://direct.mit.edu/tacl/article/doi/10.1162/TACL.a.593/134743">paper</a></p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+    <div class="cv-entry">
+      <div class="cv-head"><h3><a href="https://huggingface.co/bite-the-byte/byt5-small-deASCIIfy-TR">Bite the Byte</a></h3><span>Mar 2024 – May 2024</span></div>
+      <p>Turkish diacritization with a token-free LLM: a token classifier for character correction, 96% word-level accuracy.</p>
+    </div>
+    <div class="cv-entry">
+      <div class="cv-head"><h3>Agora</h3><span>Jan 2024 – present</span></div>
+      <p>Event-based social app for discovering real-world activities through shared interests; early-stage MVP in React Native.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Leadership</h2>
+    <div class="cv-entry">
+      <div class="cv-head"><h3>ITU Artificial Intelligence Club</h3><span>Jun 2022 – Jun 2023</span></div>
+      <p>Technical Team Lead. Organized the club's first hackathon, Datathon AI 2023, with 70+ participants from 13 universities.</p>
+    </div>
+    <div class="cv-entry">
+      <div class="cv-head"><h3>Model United Nations</h3><span>Jun 2017 – Jun 2020</span></div>
+      <p>Press Team Lead. Ran press operations for conferences of up to 500 participants.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <dl class="cv-skills">
+      <dt>Programming</dt><dd>Python (PyTorch, scikit-learn, Optuna, Transformers), C++, SQL</dd>
+      <dt>Tools</dt><dd>Linux, Git, Docker, Tableau</dd>
+      <dt>Languages</dt><dd>Turkish (native), English (advanced), German (beginner)</dd>
+    </dl>
+  </section>
+
+  <footer>
+    <p><a href="./">← Back to home</a></p>
+  </footer>
+</main>
+</body>
+</html>

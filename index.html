@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Emircan Erol</title>
-  <meta name="description" content="Emircan Erol — machine learning researcher in Istanbul.">
+  <meta name="description" content="Emircan Erol — MSc student in Artificial Intelligence at Koç University, working on interpretability and multimodal learning.">
   <meta property="og:title" content="Emircan Erol">
-  <meta property="og:description" content="Machine learning researcher in Istanbul.">
+  <meta property="og:description" content="Interpretability and multimodal learning.">
   <meta property="og:image" content="https://emircanerol.com/images/profile.jpg">
   <link rel="icon" href="images/profile.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,72 +17,92 @@
 <body>
 <main>
 
+  <nav class="site-nav" aria-label="Site">
+    <a href="./" aria-current="page">Home</a>
+    <a href="cv.html">CV</a>
+  </nav>
+
   <!-- ============ Header ============ -->
   <header class="intro">
     <div class="intro-text">
       <h1>Emircan Erol</h1>
-      <!-- TODO: set your current position -->
-      <p class="role">Researcher · <a href="https://www.ku.edu.tr/en/">Koç University</a> · Istanbul</p>
+      <p class="role">MSc student in AI · <a href="https://www.ku.edu.tr/en/">Koç University</a> · Istanbul</p>
 
+      <!-- TODO: rewrite this bio in your own words -->
       <p>
-        <!-- TODO: rewrite this bio in your own words -->
-        I work on machine learning, mostly on making models more reliable:
-        reward hacking in reinforcement learning, hallucination in language models,
-        and multimodal learning for medicine — whole-slide pathology images and spatial transcriptomics.
+        I am an MSc student in Artificial Intelligence at Koç University.
+        Before that, I was an AI researcher at <a href="https://bilgem.tubitak.gov.tr/en/">TÜBİTAK BİLGEM</a>,
+        where I built tooling for analyzing models with sparse autoencoders and activation engineering,
+        and worked on Turkish LLM data and evaluation.
+        I received my BSc in Artificial Intelligence from Istanbul Technical University.
       </p>
 
       <nav class="links" aria-label="Contact and profiles">
         <a href="mailto:emerol26@ku.edu.tr">Email</a>
+        <a href="https://scholar.google.com/citations?user=25CpSdkAAAAJ">Scholar</a>
+        <a href="https://orcid.org/0000-0001-8907-0475">ORCID</a>
+        <a href="https://www.linkedin.com/in/emircanerol/">LinkedIn</a>
         <a href="https://github.com/emircanerol">GitHub</a>
-        <!-- TODO: add your real profile URLs, and cv.pdf to the repo root
-        <a href="https://scholar.google.com/citations?user=XXXX">Scholar</a>
-        <a href="https://www.linkedin.com/in/XXXX">LinkedIn</a>
-        <a href="https://x.com/XXXX">X</a>
-        <a href="cv.pdf">CV</a>
-        -->
+        <a href="cv.html">CV</a>
       </nav>
     </div>
     <img class="portrait" src="images/profile.jpg" alt="Emircan Erol" width="200" height="200">
   </header>
+
+  <!-- ============ Research interests ============ -->
+  <section>
+    <h2>Research Interests</h2>
+    <ul class="interests">
+      <li>
+        <strong>Interpretability</strong> —
+        understanding what models represent and how they compute it, using sparse autoencoders and activation engineering.
+      </li>
+      <li>
+        <!-- TODO: name the specific area of multimodality you focus on -->
+        <strong>Multimodal learning</strong> —
+        how models combine vision and language, and multimodal data in medicine.
+      </li>
+    </ul>
+  </section>
 
   <!-- ============ News ============ -->
   <section>
     <h2>News</h2>
     <!-- Newest first. Copy a <li> to add an item. -->
     <ul class="news">
-      <li><time>Nov 2026</time> Launched this website.</li>
-      <!-- <li><time>Mon YYYY</time> Paper X accepted to Y.</li> -->
+      <li><time>Oct 2026</time> Started my MSc in Artificial Intelligence at Koç University.</li>
     </ul>
   </section>
 
-  <!-- ============ Research ============ -->
+  <!-- ============ Publications ============ -->
   <section>
-    <h2>Research</h2>
-    <!-- <p class="section-note">* equal contribution</p> -->
+    <h2>Publications</h2>
 
     <!--
-      One <article class="pub"> per paper. Remove "highlight" for non-selected work.
-      Thumbnail is optional: delete the <img> to get a text-only entry.
+      One <article class="pub"> per paper; add "highlight" for selected work.
+      Optional thumbnail: <img class="pub-thumb" src="images/xxx.png" alt="">
     -->
-    <!--
-    <article class="pub highlight">
-      <img class="pub-thumb" src="images/paper-teaser.png" alt="">
+    <article class="pub">
       <div class="pub-body">
-        <h3>Paper title</h3>
-        <p class="authors"><strong>Emircan Erol</strong>, Coauthor*, Coauthor*</p>
-        <p class="venue">Venue, 2026</p>
-        <p class="pub-links"><a href="#">paper</a> <a href="#">code</a></p>
-        <p class="tldr">One-sentence takeaway.</p>
+        <h3>CorefInst: Leveraging LLMs for Multilingual Coreference Resolution</h3>
+        <p class="authors">Tuğba Pamay Arslan, <strong>Emircan Erol</strong>, Gülşen Eryiğit</p>
+        <p class="venue">Transactions of the Association for Computational Linguistics (TACL), 2026</p>
+        <p class="pub-links">
+          <a href="https://direct.mit.edu/tacl/article/doi/10.1162/TACL.a.593/134743">paper</a>
+        </p>
+        <p class="tldr">Instruction-tuned decoder-only LLMs reach state-of-the-art coreference resolution across 15 languages, +1.8 CoNLL F1 over the previous best.</p>
       </div>
     </article>
-    -->
-    <p>Papers coming soon.</p>
   </section>
 
   <!-- ============ Projects ============ -->
   <section>
     <h2>Projects</h2>
     <ul class="projects">
+      <li>
+        <a href="https://huggingface.co/bite-the-byte/byt5-small-deASCIIfy-TR">Bite the Byte</a>
+        — Turkish diacritization with a token-free LLM (ByT5); 96% word-level accuracy.
+      </li>
       <li>
         <a href="https://github.com/emircanerol/automem">AutoMem</a>
         — graph-vector memory service that gives AI assistants durable, relational memory.
@@ -91,19 +111,8 @@
         <a href="https://github.com/emircanerol/zemberek-rust">zemberek-rust</a>
         — Rust port of Zemberek, the Turkish NLP toolkit.
       </li>
-      <li>
-        <a href="https://github.com/emircanerol/latex-env-template">latex-env-template</a>
-        — personal LaTeX documentation template.
-      </li>
     </ul>
   </section>
-
-  <!-- ============ Teaching / Service (uncomment when needed) ============
-  <section>
-    <h2>Teaching</h2>
-    <ul class="plain"><li>TA, COMPxxx — Course name (Fall 2026)</li></ul>
-  </section>
-  -->
 
   <footer>
     <p>Last updated November 2026. Design inspired by <a href="https://jonbarron.info/">Jon Barron</a>.</p>
